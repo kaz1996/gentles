@@ -1,0 +1,8 @@
+$dark-color: rgb(0, 0, 0);
+$white-color: rgb(255, 255, 255);
+$breakpoints: (
+  'small': (min-width: 640px),
+  'medium': (min-width: 768px),
+  'large': (min-width: 1024px),
+  'huge': (min-width: 1280px),
+);

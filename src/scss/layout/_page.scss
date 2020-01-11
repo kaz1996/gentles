@@ -1,0 +1,12 @@
+.page {
+  font-size: 1.6rem;
+  font-family: $playfair-display;
+  font-weight: $bolder;
+  height: 100vh;
+  margin: 0;
+  color: $white-color;
+
+  &__header {
+    padding: 2rem;
+  }
+}

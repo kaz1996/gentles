@@ -1,0 +1,24 @@
+.list {
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+  margin: 0;
+  padding: 0 2rem 0 0;
+
+  @include respond-to('small') {
+    justify-content: space-around;
+  }
+  
+  &__item {
+    margin-left: 2rem;
+  }
+
+  &__link {
+    @include link();
+    font-size: 2rem;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+}
