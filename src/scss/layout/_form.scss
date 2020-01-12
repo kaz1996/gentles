@@ -1,0 +1,19 @@
+.form {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+
+  &__input {
+    width: 50%;
+    padding: 1rem 0;
+    border: .1rem solid $grey-color;
+    border-radius: .5rem 0 0 .5rem;
+  }
+
+  &__button {
+    @include button($grey-color, $dark-color);
+    border-width: .1rem;
+    border-radius: 0 .5rem .5rem 0;
+    background-color: $gold-color;
+  }
+}

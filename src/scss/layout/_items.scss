@@ -1,0 +1,15 @@
+.items {
+  width: 80%;
+  display: grid;
+  border: 1px solid white;
+  grid-template-rows: repeat(3, 4fr);
+  gap: 2rem;
+
+  @include respond-to('small') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to('large') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

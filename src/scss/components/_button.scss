@@ -2,7 +2,7 @@
   @include button($dark-color, $dark-color);
   
   &:hover {
-    @include button-hover(white, $dark-color);
+    @include button-hover($gold-color, $dark-color);
   }
   
   &--hidden {
@@ -26,5 +26,10 @@
     font-weight: $bold;
     font-size: 2rem;
     padding: 1rem 1.5rem;
+  }
+
+  &--small {
+    // font-weight: $normal;
+    border-width: .1rem;
   }
 }
