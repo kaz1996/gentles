@@ -30,12 +30,13 @@ module.exports = {
         },
       },
       {
-        test: /\.(svg|png|jpg|git)$/,
+        test: /\.(svg|png|jpg|gif)$/,
         use: {
           loader: 'file-loader',
           options: {
             name: '[name].[hash].[ext]',
-            outputPaht: 'imgs',
+            outputPath: 'imgs',
+            esModule: false,
           },
         },
       },

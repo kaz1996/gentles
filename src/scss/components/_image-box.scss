@@ -1,0 +1,11 @@
+.image-box {
+  width: 100%;
+  
+  @include respond-to('medium') {
+    width: 40%;
+  }
+  
+  &__image {
+    max-width: 100%;
+  }
+}

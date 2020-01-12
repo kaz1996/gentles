@@ -4,10 +4,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url('C:/Users/nobekaz/Desktop/Programming/JavaScript-practice/gentles/src/assets/imgs/banner.jpg');
+  background-image: url('../assets/imgs/banner.jpg');
   background-size: cover;
   background-position: center;
-  // background-attachment: scroll;
+  background-attachment: fixed;
   position: relative;
   z-index: 3;
 
@@ -34,18 +34,17 @@
       opacity: .5;
       z-index: -2;
     }
-  }
 
-  &__store-name {
-    font-size: 10rem;
-    color: gold;
-    display: block;
-
-    @include respond-to('large') {
-      display: inline;
+    &--strong {
+      font-size: 10rem;
+      color: gold;
+      display: block;
+  
+      @include respond-to('large') {
+        display: inline;
+      }
     }
   }
-
   &__button {
     z-index: 2;
   }

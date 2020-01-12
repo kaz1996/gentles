@@ -1,0 +1,12 @@
+.about {
+  height: 70vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  color: $dark-color;
+
+  &__text {
+    padding: 2rem;
+  }
+}
