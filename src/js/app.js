@@ -41,6 +41,7 @@ window.addEventListener('scroll', () => {
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   removeActiveClass();
+  input.value = '';
   cards.forEach((card) => {
     if (card.textContent.toLocaleLowerCase().includes(input.value)) {
       card.classList.remove('card--display-none');
