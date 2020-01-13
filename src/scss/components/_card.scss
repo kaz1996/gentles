@@ -38,17 +38,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:1.5rem 1rem;
+    padding:1rem 1rem;
   }
 
   &__text {
     font-size: 2rem;
     color: $dark-color;
-    margin: 0 3rem;
 
     &--right {
       letter-spacing: 0.2rem;
-      margin-right: 3rem;
+      margin-right: 2rem;
     }
   }
 
