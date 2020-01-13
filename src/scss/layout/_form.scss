@@ -2,9 +2,12 @@
   width: 70%;
   display: flex;
   justify-content: center;
+  @include respond-to('medium') {
+    width: 50%;
+  }
 
   &__input {
-    width: 50%;
+    width: 100%;
     padding: 1rem 0;
     border: .1rem solid $grey-color;
     border-radius: .5rem 0 0 .5rem;
