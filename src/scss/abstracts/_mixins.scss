@@ -11,6 +11,10 @@
   border-radius: .5rem;
   cursor: pointer;
   transition: all .5s;
+
+  &:focus {
+    outline: $gold-color auto .1rem;
+  }
 }
 
 @mixin button-hover($color, $bg-color) {

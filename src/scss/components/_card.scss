@@ -6,6 +6,10 @@
   overflow: hidden;
   border-radius: .5rem;
 
+  &--display-none {
+    display: none;
+  }
+
   &__image-box {
     width: 100%;
     position: relative;

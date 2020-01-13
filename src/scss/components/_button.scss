@@ -32,4 +32,9 @@
     // font-weight: $normal;
     border-width: .1rem;
   }
+
+  &--active {
+    color: $gold-color;
+    border-color: $gold-color;
+  }
 }
