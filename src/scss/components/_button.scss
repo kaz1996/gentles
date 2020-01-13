@@ -4,7 +4,7 @@
   &:hover {
     @include button-hover($gold-color, $dark-color);
   }
-  
+
   &--hidden {
     display: none;
     @include respond-to('medium') {
@@ -29,7 +29,6 @@
   }
 
   &--small {
-    // font-weight: $normal;
     border-width: .1rem;
   }
 
