@@ -5,7 +5,7 @@
   position: relative;
   overflow: hidden;
   border-radius: .5rem;
-
+ 
   &--display-none {
     display: none;
   }
@@ -14,10 +14,22 @@
     width: 100%;
     position: relative;
     cursor: pointer;
+    &:hover {
+      .card__cart-button {
+        bottom: -4%;
+        right: 0;
+        background-color: $gold-color;
+      }
+  
+      .card__image {
+        transform: scale(1.1);
+      }
+    }
   }
 
   &__image {
     width: 100%;
+    transition-delay: 1s;
     transition: all 1s ease-in-out;
   }
 
@@ -55,15 +67,4 @@
     }
   }
 
-  &:hover {
-    .card__cart-button {
-      bottom: -4%;
-      right: 0;
-      background-color: $gold-color;
-    }
-
-    .card__image {
-      transform: scale(1.1);
-    }
-  }
 }

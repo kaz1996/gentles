@@ -7,8 +7,10 @@
   }
 
   &__input {
+    font-size: 100%;
+    font-weight: $bold;
     width: 100%;
-    padding: 1rem 0;
+    padding: 1rem 1rem;
     border: .1rem solid $grey-color;
     border-radius: .5rem 0 0 .5rem;
   }

@@ -50,7 +50,7 @@
           <img class="image-box__image" src="./assets/imgs/choco-stroberry.jpg" alt="choco brownie with coffee" />
         </div>
       </section>
-      <section class="store" id="js-store">
+      <section class="store main__store" id="js-store">
         <div class="text">
           <h2 class="text__title">our <span class="text__title--strong">Store</span></h2>
         </div>
@@ -62,10 +62,10 @@
           <button class="button button--small button--light filter__button">DONUTS</button>
         </div>
         <form class="form store__form">
-          <input type="search" class="form__input">
+          <input type="search" class="form__input" placeholder="Search Items..." id="js-input">
           <button class="form__button" type="submit"><i class="fas fa-search"></i></button>
         </form>
-        <div class="items">
+        <div class="items" id="js-items">
           <div class="card" data-tag="cakes">
             <div class="card__image-box">
               <img src="./assets/imgs/cake1.jpg" alt="choco cake on white plage" class="card__image">
@@ -182,7 +182,7 @@
               <button class="card__cart-button"><i class="fas fa-shopping-cart"></i></button>
             </div>
             <div class="card__body">
-              <p class="card__text">Ptato Donut</p>
+              <p class="card__text">Potato Donut</p>
               <p class="card__text card__text--right">$5</p>
             </div>
           </div>
