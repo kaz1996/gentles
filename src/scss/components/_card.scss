@@ -1,11 +1,10 @@
 .card {
-  min-width: 0;
-  background-color: white;
-  border: 1px solid gold;
+  background-color: $white-color;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
+  border-radius: .5rem;
 
   &__image-box {
     width: 100%;
@@ -55,7 +54,7 @@
 
   &:hover {
     .card__cart-button {
-      bottom: -3%;
+      bottom: -4%;
       right: 0;
       background-color: $gold-color;
     }
