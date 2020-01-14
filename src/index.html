@@ -69,6 +69,18 @@
           <input type="search" class="form__input" placeholder="Search Items..." id="js-input">
           <button class="form__button" type="submit"><i class="fas fa-search"></i></button>
         </form>
+        <div class="modal" id="js-modal">
+          <button class="modal__close-button" id="js-close">x</button>
+          <div class="carousel modal__carousel">
+            <img src="./assets/imgs/cake1.jpg" alt="choco cake on white plage" class="carousel__image">
+          </div>
+          <button class="carousel__button carousel__button--left" id="js-prev">
+            <i class="carousel__icon fas fa-arrow-left"></i>
+          </button>
+          <button class="carousel__button carousel__button--right" id="js-next">
+            <i class="carousel__icon fas fa-arrow-right"></i>
+          </button>
+        </div>
         <div class="items" id="js-items">
           <div class="card" data-tag="cakes">
             <div class="card__image-box">

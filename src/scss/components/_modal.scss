@@ -1,0 +1,73 @@
+.modal {
+  width: 95%;
+  height: 70vh;
+  position: fixed;
+  top: 15%;
+  margin: auto;
+  z-index: 10;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: auto;
+  
+  @include respond-to('large') {
+    width: 85%;
+  }
+  
+  @include respond-to('huge') {
+    top: 0;
+    width: 80%;
+    height: auto;
+  }
+  
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.7;
+    z-index: -2;
+  }
+  
+  &__close-button {
+    @include nonSquareButton(inherit, transparent);
+    width: 5%;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+  &__button {
+    @include nonSquareButton(inherit, transparent);
+    font-size: 3rem;
+    opacity: 0.7;
+    position: absolute;
+
+    @include respond-to('large') {
+      font-size: 5rem;
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &--left {
+      left: 0;
+    }
+
+    &--right {
+      right: 0;
+    }
+  }
+}
