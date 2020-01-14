@@ -11,10 +11,4 @@
   @include respond-to('large') {
     grid-template-columns: repeat(3, 1fr);
   }
-  
-  &__not-found {
-    font-size: 10rem;
-    margin: auto;
-    color: red;
-  }
 }
