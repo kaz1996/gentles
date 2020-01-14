@@ -1,11 +1,10 @@
 .nav-bar {
   &__items {
+    @include list();
     display: flex;
     justify-content: space-around;
-    list-style-type: none;
-    margin: 0;
-    // padding: 0 2rem 0 0;
     font-weight: $normal;
+    padding-left: 2rem;
   }
 
   &__item {
@@ -15,7 +14,7 @@
   &__link {
     @include link();
     font-size: 2.5rem;
-    color: white;
+    color: $white-color;
 
     &:hover {
       opacity: .7;

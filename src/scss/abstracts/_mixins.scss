@@ -17,6 +17,12 @@
   }
 }
 
+@mixin list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 @mixin button-hover($color, $bg-color) {
   color: $color;
   background-color: $bg-color;
