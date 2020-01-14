@@ -17,9 +17,8 @@
   }
 
   &__button {
-    @include button($grey-color, $dark-color);
+    @include squareButton($grey-color, $dark-color, $gold-color);
     border-width: .1rem;
     border-radius: 0 .5rem .5rem 0;
-    background-color: $gold-color;
   }
 }

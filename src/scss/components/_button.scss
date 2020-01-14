@@ -1,12 +1,12 @@
 .button {
-  @include button($dark-color, $dark-color);
-  
+  @include squareButton($dark-color, $dark-color, inherit);
+
   &:hover {
     @include button-hover($gold-color, $dark-color);
   }
 
   &--light {
-    @include button($white-color, $white-color);
+    @include squareButton($white-color, $white-color, inherit);
   }
 
   &--big {
@@ -22,7 +22,7 @@
   }
 
   &--small {
-    border-width: .1rem;
+    border-width: 0.1rem;
   }
 
   &--active {

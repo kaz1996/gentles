@@ -3,7 +3,9 @@ import '../scss/main.scss';
 const body = document.querySelector('body');
 const filterButtons = document.querySelectorAll('.filter__button');
 const cards = document.querySelectorAll('.card');
+const images = document.querySelectorAll('.card__image');
 const form = document.querySelector('.form');
+const closeModal = document.querySelector('#js-close');
 let timer;
 
 const filterCards = (buttonText) => {
@@ -57,4 +59,15 @@ filterButtons.forEach((filterButton) => {
     filterCards(filterButton.textContent.toLocaleLowerCase());
     filterButton.classList.add('button--active');
   });
+});
+
+const modal = document.querySelector('#js-modal');
+images.forEach((image) => {
+  image.addEventListener('click', () => {
+    modal.style.display = 'flex';
+  });
+});
+
+closeModal.addEventListener('click', () => {
+  modal.style.display = 'none';
 });
