@@ -4,6 +4,7 @@
   align-items: center;
   flex-wrap: wrap;
   color: $dark-color;
+  background-color: $white-color;
   @include respond-to('large') {
     height: 70vh;
   }
