@@ -1,19 +1,19 @@
 @mixin link {
   color: $dark-color;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 @mixin squareButton($border-color, $text-color, $bg-color) {
   color: $text-color;
   background-color: $bg-color;
   padding: 1rem 1.5rem;
-  border: .3rem solid $border-color;
-  border-radius: .5rem;
+  border: 0.3rem solid $border-color;
+  border-radius: 0.5rem;
   cursor: pointer;
-  transition: all .5s;
+  transition: all 0.5s;
 
   &:focus {
-    outline: $gold-color auto .1rem;
+    outline: $gold-color auto 0.1rem;
   }
 }
 
@@ -41,11 +41,7 @@
   $raw-query: map-get($breakpoints, $breakpoint);
 
   @if $raw-query {
-    $query: if(
-      type-of($raw-query) == 'string',
-      unquote($raw-query),
-      inspect($raw-query)
-    );
+    $query: if(type-of($raw-query) == 'string', unquote($raw-query), inspect($raw-query));
 
     @media #{$query} {
       @content;
@@ -53,5 +49,11 @@
   } @else {
     @error 'No value found for `#{$breakpoint}`. '
          + 'Please make sure it is defined in `$breakpoints` map.';
+  }
+}
+
+@mixin animation($animation-name) {
+  @keyframes #{$animation-name} {
+    @content;
   }
 }
