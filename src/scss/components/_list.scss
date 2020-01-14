@@ -4,7 +4,8 @@
   list-style-type: none;
   margin: 0;
   padding: 0 2rem 0 0;
-
+  font-weight: $normal;
+  
   @include respond-to('small') {
     justify-content: space-around;
   }
@@ -12,10 +13,11 @@
   &__item {
     margin-left: 2rem;
   }
-
+  
   &__link {
     @include link();
-    font-size: 2rem;
+    font-size: 2.5rem;
+    color: white;
 
     &:hover {
       opacity: .7;
