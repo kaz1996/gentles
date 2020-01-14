@@ -9,9 +9,7 @@ let timer;
 
 const filterCards = (buttonText) => {
   cards.forEach((card) => {
-    if (buttonText === 'all') {
-      card.classList.remove('card--display-none');
-    } else if (buttonText === card.dataset.tag) {
+    if (buttonText === 'all' || buttonText === card.dataset.tag) {
       card.classList.remove('card--display-none');
     } else {
       card.classList.add('card--display-none');
