@@ -4,7 +4,6 @@ const body = document.querySelector('body');
 const filterButtons = document.querySelectorAll('.filter__button');
 const cards = document.querySelectorAll('.card');
 const form = document.querySelector('.form');
-const input = form.querySelector('#js-input');
 let timer;
 
 const filterCards = (buttonText) => {
@@ -39,8 +38,11 @@ window.addEventListener('scroll', () => {
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   removeActiveClass();
+  const input = form.querySelector('#js-input');
+  const inputText = input.value.toLowerCase();
   cards.forEach((card) => {
-    if (card.textContent.toLocaleLowerCase().includes(input.value)) {
+    const cardTextLower = card.textContent.toLowerCase();
+    if (cardTextLower.includes(inputText)) {
       card.classList.remove('card--display-none');
     } else {
       card.classList.add('card--display-none');
