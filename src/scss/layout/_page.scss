@@ -6,8 +6,9 @@
   color: $white-color;
   background-color: $dark-color;
   margin: 0;
+  overflow-x: hidden;
 
   &__header {
-    padding: 2rem 0 1rem 2rem;
+    padding: 3rem 1rem;
   }
 }
