@@ -2,7 +2,6 @@
   background-color: $white-color;
   display: flex;
   flex-direction: column;
-  position: relative;
   overflow: hidden;
   border-radius: 0.5rem;
 
@@ -11,11 +10,12 @@
   }
 
   &__image-box {
-    width: 100%;
+    box-sizing: border-box;
     position: relative;
+    width: 100%;
     cursor: pointer;
   }
-
+  
   &__image {
     width: 100%;
     transition: all 1s ease-in-out;

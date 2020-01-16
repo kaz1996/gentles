@@ -1,5 +1,112 @@
 import '../scss/main.scss';
-import './util';
-import './filter';
-import './modal';
-import './navbar';
+import disableHoverByScroll from './util';
+import './navbar/navbar';
+import { checkTag, checkName } from './card';
+
+const filterButtons = document.querySelectorAll('.filter__button');
+const searchForm = document.querySelector('#js-search-form');
+const modal = document.querySelector('.modal');
+const modalCloseButton = document.querySelector('#js-close');
+const carousel = modal.querySelector('#js-carousel');
+
+const checkButtonShoudldBeDisplay = (counter, images, nextButton, prevButton) => {
+  if (counter >= images.length - 1) {
+    nextButton.style.display = 'none';
+    prevButton.style.display = 'block';
+  } else if (counter <= 0) {
+    prevButton.style.display = 'none';
+    nextButton.style.display = 'block';
+  } else {
+    prevButton.style.display = 'block';
+    nextButton.style.display = 'block';
+  }
+};
+
+const slideImage = (images, imageIndex) => {
+  const prevButton = modal.querySelector('#js-prev');
+  const nextButton = modal.querySelector('#js-next');
+
+  let counter = imageIndex;
+  const size = carousel.clientWidth;
+  carousel.style.transform = `translateX(${-size * counter}px)`;
+
+  checkButtonShoudldBeDisplay(counter, images, nextButton, prevButton);
+
+  prevButton.addEventListener('click', () => {
+    if (counter <= 0) return;
+    counter -= 1;
+    carousel.style.transition = 'all .5s ease-out';
+    carousel.style.transform = `translateX(${-size * counter}px)`;
+  });
+
+  nextButton.addEventListener('click', () => {
+    console.log(counter, images.length - 2);
+    if (counter >= images.length - 1) return;
+    counter += 1;
+    carousel.style.transition = 'all .5s ease-out';
+    carousel.style.transform = `translateX(${-size * counter}px)`;
+  });
+
+  carousel.addEventListener('transitionend', () => {
+    checkButtonShoudldBeDisplay(counter, images, nextButton, prevButton);
+  });
+};
+
+const createImage = (image) => {
+  const imageElemnent = document.createElement('img');
+  imageElemnent.classList.add('carousel__image');
+  imageElemnent.src = image.src;
+  carousel.appendChild(imageElemnent);
+};
+
+const updateModal = () => {
+  const images = document.querySelectorAll('.card__image');
+  carousel.innerHTML = '';
+
+  images.forEach((image, index) => {
+    createImage(image);
+    image.addEventListener('click', () => {
+      modal.classList.add('modal--open');
+      slideImage(images, index);
+    });
+  });
+};
+
+const removeActiveClass = () => {
+  filterButtons.forEach((filterButton) => {
+    if (filterButton.classList.contains('button--active')) {
+      filterButton.classList.remove('button--active');
+    }
+  });
+};
+
+window.addEventListener('load', () => {
+  disableHoverByScroll();
+  checkTag('all');
+  updateModal();
+});
+
+filterButtons.forEach((filterButton) => {
+  filterButton.addEventListener('click', () => {
+    removeActiveClass();
+    checkTag(filterButton.textContent.toLowerCase());
+    filterButton.classList.add('button--active');
+    updateModal();
+  });
+});
+
+searchForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const input = searchForm.querySelector('#js-input');
+  const inputText = input.value.toLowerCase();
+
+  removeActiveClass();
+  checkName(inputText);
+  updateModal();
+  searchForm.reset();
+});
+
+modalCloseButton.addEventListener('click', () => {
+  modal.classList.remove('modal--open');
+  carousel.style.transition = '';
+});

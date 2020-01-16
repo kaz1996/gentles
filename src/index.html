@@ -68,14 +68,14 @@
           <button class="button button--small button--light filter__button">SWEETS</button>
           <button class="button button--small button--light filter__button">DONUTS</button>
         </div>
-        <form class="form store__form">
+        <form class="form store__form" id="js-search-form">
           <input type="search" class="form__input" placeholder="Search Items..." id="js-input">
           <button class="form__button" type="submit"><i class="fas fa-search"></i></button>
         </form>
         <div class="modal" id="js-modal">
           <button class="modal__close-button" id="js-close">x</button>
           <div class="carousel modal__carousel">
-            <img src="./assets/imgs/cake1.jpg" alt="choco cake on white plage" class="carousel__image">
+            <div class="carousel__inner" id="js-carousel"></div>
           </div>
           <button class="carousel__button carousel__button--left" id="js-prev">
             <i class="carousel__icon fas fa-arrow-left"></i>
@@ -84,128 +84,7 @@
             <i class="carousel__icon fas fa-arrow-right"></i>
           </button>
         </div>
-        <div class="items" id="js-items">
-          <div class="card" data-tag="cakes">
-            <div class="card__image-box">
-              <img src="./assets/imgs/cake1.jpg" alt="choco cake on white plage" class="card__image">
-              <button class="card__cart-button"><i class="fas fa-shopping-cart"></i></button>
-            </div>
-            <div class="card__body">
-              <p class="card__text">Chocolate Opera</p>
-              <p class="card__text card__text--right">$5</p>
-            </div>
-          </div>
-          <div class="card" data-tag="cakes">
-            <div class="card__image-box">
-              <img src="./assets/imgs/cake2.jpg" alt="1 pieace of choco cake" class="card__image">
-              <button class="card__cart-button"><i class="fas fa-shopping-cart"></i></button>
-            </div>
-            <div class="card__body">
-              <p class="card__text">Chocolate Cake</p>
-              <p class="card__text card__text--right">$15</p>
-            </div>
-          </div>
-          <div class="card" data-tag="cakes">
-            <div class="card__image-box">
-              <img src="./assets/imgs/cake3.jpg" alt="matcha cake" class="card__image">
-              <button class="card__cart-button"><i class="fas fa-shopping-cart"></i></button>
-            </div>
-            <div class="card__body">
-              <p class="card__text">Matcha Cake</p>
-              <p class="card__text card__text--right">$20</p>
-            </div>
-          </div>
-          <div class="card" data-tag="cupcakes">
-            <div class="card__image-box">
-              <img src="./assets/imgs/cupcake1.jpg" alt="choco cupcake" class="card__image">
-              <button class="card__cart-button"><i class="fas fa-shopping-cart"></i></button>
-            </div>
-            <div class="card__body">
-              <p class="card__text">Chocolate Cupcake</p>
-              <p class="card__text card__text--right">$10</p>
-            </div>
-          </div>
-          <div class="card" data-tag="cupcakes">
-            <div class="card__image-box">
-              <img src="./assets/imgs/cupcake2.jpg" alt="choco cupcake" class="card__image">
-              <button class="card__cart-button"><i class="fas fa-shopping-cart"></i></button>
-            </div>
-            <div class="card__body">
-              <p class="card__text">Chocolate Chips cupcake</p>
-              <p class="card__text card__text--right">$7</p>
-            </div>
-          </div>
-          <div class="card" data-tag="cupcakes">
-            <div class="card__image-box">
-              <img src="./assets/imgs/cupcake3.jpg" alt="choco cupcake with cream" class="card__image">
-              <button class="card__cart-button"><i class="fas fa-shopping-cart"></i></button>
-            </div>
-            <div class="card__body">
-              <p class="card__text">Chocolate Cream Cupcake</p>
-              <p class="card__text card__text--right">$3</p>
-            </div>
-          </div>
-          <div class="card" data-tag="sweets">
-            <div class="card__image-box">
-              <img src="./assets/imgs/sweets1.jpg" alt="matcha sweets" class="card__image">
-              <button class="card__cart-button"><i class="fas fa-shopping-cart"></i></button>
-            </div>
-            <div class="card__body">
-              <p class="card__text">Matcha Brownie</p>
-              <p class="card__text card__text--right">$13</p>
-            </div>
-          </div>
-          <div class="card" data-tag="sweets">
-            <div class="card__image-box">
-              <img src="./assets/imgs/sweets2.jpg" alt="colorfull macarons" class="card__image">
-              <button class="card__cart-button"><i class="fas fa-shopping-cart"></i></button>
-            </div>
-            <div class="card__body">
-              <p class="card__text">Macaron</p>
-              <p class="card__text card__text--right">$21</p>
-            </div>
-          </div>
-          <div class="card" data-tag="sweets">
-            <div class="card__image-box">
-              <img src="./assets/imgs/sweets3.jpg" alt="choco sweets" class="card__image">
-              <button class="card__cart-button"><i class="fas fa-shopping-cart"></i></button>
-            </div>
-            <div class="card__body">
-              <p class="card__text">Chocolate Pops</p>
-              <p class="card__text card__text--right">$23</p>
-            </div>
-          </div>
-          <div class="card" data-tag="donuts">
-            <div class="card__image-box">
-              <img src="./assets/imgs/donut1.jpg" alt="donuts with mug cup" class="card__image">
-              <button class="card__cart-button"><i class="fas fa-shopping-cart"></i></button>
-            </div>
-            <div class="card__body">
-              <p class="card__text">Marble-Froasted Donuts</p>
-              <p class="card__text card__text--right">$5</p>
-            </div>
-          </div>
-          <div class="card" data-tag="donuts">
-            <div class="card__image-box">
-              <img src="./assets/imgs/donut2.jpg" alt="choco donut" class="card__image">
-              <button class="card__cart-button"><i class="fas fa-shopping-cart"></i></button>
-            </div>
-            <div class="card__body">
-              <p class="card__text">Cider Donut</p>
-              <p class="card__text card__text--right">$10</p>
-            </div>
-          </div>
-          <div class="card" data-tag="donuts">
-            <div class="card__image-box">
-              <img src="./assets/imgs/donut3.jpg" alt="brown donut" class="card__image">
-              <button class="card__cart-button"><i class="fas fa-shopping-cart"></i></button>
-            </div>
-            <div class="card__body">
-              <p class="card__text">Potato Donut</p>
-              <p class="card__text card__text--right">$5</p>
-            </div>
-          </div>
-        </div>
+        <div class="items" id="js-items"></div>
       </section>
     </main>
   </body>

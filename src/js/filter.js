@@ -1,29 +1,10 @@
+import { checkTag, checkName } from './card';
+import displayModal from './modal';
+
 const filterButtons = document.querySelectorAll('.filter__button');
-const cards = document.querySelectorAll('.card');
 const form = document.querySelector('.form');
-
-const filterCards = (buttonText) => {
-  cards.forEach((card) => {
-    if (buttonText === 'all' || buttonText === card.dataset.tag) {
-      card.classList.remove('card--display-none');
-    } else {
-      card.classList.add('card--display-none');
-    }
-  });
-};
-
-const filterCardsByText = () => {
-  const inputText = form.querySelector('#js-input').value;
-  const inputTextLower = inputText.toLowerCase();
-  cards.forEach((card) => {
-    const cardTextLower = card.textContent.toLowerCase();
-    if (cardTextLower.includes(inputTextLower)) {
-      card.classList.remove('card--display-none');
-    } else {
-      card.classList.add('card--display-none');
-    }
-  });
-};
+const images = document.querySelectorAll('.card__image');
+console.log(images);
 
 const removeActiveClass = () => {
   filterButtons.forEach((filterButton) => {
@@ -33,17 +14,30 @@ const removeActiveClass = () => {
   });
 };
 
+window.addEventListener('load', () => {
+  checkTag('all');
+  displayModal(images);
+});
+
 filterButtons.forEach((filterButton) => {
   filterButton.addEventListener('click', () => {
+    const tag = filterButton.textContent.toLowerCase();
     removeActiveClass();
-    filterCards(filterButton.textContent.toLocaleLowerCase());
+    checkTag(tag);
     filterButton.classList.add('button--active');
+    const newImages = document.querySelectorAll('.card__image');
+    console.log(newImages);
+    displayModal(newImages);
   });
 });
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   removeActiveClass();
-  filterCardsByText();
+  const inputText = form.querySelector('#js-input').value;
+  const inputTextLower = inputText.toLowerCase();
+  checkName(inputTextLower);
   form.reset();
+  const newImages = document.querySelectorAll('.card__image');
+  console.log(newImages);
 });
