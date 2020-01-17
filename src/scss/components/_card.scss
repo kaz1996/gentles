@@ -4,13 +4,13 @@
   flex-direction: column;
   overflow: hidden;
   border-radius: 0.5rem;
+  font-weight: $bolder;
 
   &--display-none {
     display: none;
   }
 
   &__image-box {
-    box-sizing: border-box;
     position: relative;
     width: 100%;
     cursor: pointer;
@@ -18,13 +18,13 @@
   
   &__image {
     width: 100%;
-    transition: all 1s ease-in-out;
+    transition: all .5s ease-in-out;
   }
 
   &__cart-button {
     @include nonSquareButton($dark-color, $gold-color);
-    font-size: 1.7rem;
-    padding: 2rem 1rem 1.5rem 1.5rem;
+    font-size: 5vw;
+    padding: 3rem 1.5rem 1.5rem 2rem;
     border-radius: 2rem 0 0 0;
     position: absolute;
     bottom: 1%;
@@ -39,8 +39,12 @@
   }
 
   &__text {
-    font-size: 2rem;
+    font-size: 5vw;
     color: $dark-color;
+
+    @include respond-to('large') {
+      font-size: 1.5vw;
+    }
 
     &--right {
       letter-spacing: 0.2rem;
@@ -66,9 +70,10 @@
     }
 
     &__cart-button {
+      font-size: 1.5vw;
       bottom: -10%;
       right: -30%;
-      transition: all 1s ease-in-out;
+      transition: all .5s ease-in-out;
 
       &:hover {
         color: $white-color;

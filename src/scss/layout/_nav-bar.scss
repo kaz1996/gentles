@@ -1,11 +1,14 @@
 .nav-bar {
   width: 50%;
   height: 95vh;
+  font-size: 75%;
+  background-color: $dark-color;
+  border: .1rem solid $white-color;
+  border-top: none;
   position: absolute;
   top: 7vh;
-  left: 0;
+  left: -5%;
   z-index: 30;
-  background-color: $dark-color;
   transform: translateX(-100%);
   transition: transform .5s ease-out;
 
@@ -13,12 +16,10 @@
     transform: translateX(0);
   }
 
-  @include respond-to('medium') {
-    width: 35%;
-  }
-
   @include respond-to('large') {
     height: 100%;
+    font-size: inherit;
+    border: none;
     position: static;
     transform: none;
     transition: none;
@@ -60,7 +61,7 @@
 
   &__link {
     @include link();
-    font-size: 2.5rem;
+    font-size: inherit;
     color: $white-color;
 
     &:hover {

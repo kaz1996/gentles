@@ -19,7 +19,7 @@
   }
   &__button {
     @include nonSquareButton($white-color, transparent);
-    font-size: 4rem;
+    font-size: 10vw;
     position: absolute;
     top: 50%;
 

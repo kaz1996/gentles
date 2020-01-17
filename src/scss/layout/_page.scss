@@ -2,14 +2,13 @@
   height: 100vh;
   font-size: 1.6rem;
   font-family: $playfair-display;
-  font-weight: $bolder;
+  font-weight: $bold;
   color: $white-color;
   background-color: $dark-color;
   margin: 0;
   overflow-x: hidden;
 
   &__header {
-    padding-top: 5rem;
-    padding-bottom: 3rem
+    margin: 1.5vh;
   }
 }

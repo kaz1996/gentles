@@ -1,5 +1,6 @@
 .button {
   @include squareButton($dark-color, $dark-color, inherit);
+  font-weight: inherit;
 
   &:hover {
     @include button-hover($gold-color, $dark-color);
@@ -10,19 +11,29 @@
   }
 
   &--big {
-    font-weight: $bold;
-    font-size: 2.5rem;
+    font-size: 7vw;
     padding: 1.5rem 3.5rem;
-  }
 
+    @include respond-to('large') {
+      font-size: 3vw;
+    }
+  }
+  
   &--medium {
-    font-weight: $bold;
-    font-size: 2rem;
+    font-size: 6vw;
     padding: 1rem 1.5rem;
+    @include respond-to('large') {
+      font-size: 2vw;
+    }
   }
-
+  
   &--small {
-    border-width: 0.1rem;
+    font-size: 4vw;
+    font-weight: $normal;
+    @include respond-to('large') {
+      font-size: 1vw;
+      border-width: .3rem;
+    }
   }
 
   &--active {

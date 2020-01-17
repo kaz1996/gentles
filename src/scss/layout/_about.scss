@@ -2,14 +2,22 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  flex-wrap: wrap;
+  flex-direction: column;
   color: $dark-color;
   background-color: $white-color;
+  padding-bottom: 5vh;
+
   @include respond-to('large') {
     height: 70vh;
+    flex-direction: row;
   }
 
   &__text {
+    margin: 0;
     padding: 2rem;
+  }
+
+  &__image-box {
+    margin-top: 2rem;
   }
 }

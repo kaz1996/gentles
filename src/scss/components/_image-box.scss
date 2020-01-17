@@ -1,7 +1,7 @@
 .image-box {
-  width: 100%;
-  
-  @include respond-to('medium') {
+  width: 90%;
+
+  @include respond-to('large') {
     width: 40%;
   }
   

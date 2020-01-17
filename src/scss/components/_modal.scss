@@ -1,15 +1,14 @@
 .modal {
   width: 95%;
   position: fixed;
-  top: 15%;
+  top: 30vh;
   margin: auto;
   z-index: 10;
   display: none;
   overflow: hidden;
 
   @include respond-to('medium') {
-    width: 80%;
-    top: 10%;
+    top: 10vh;
   }
   
   @include respond-to('large') {
@@ -34,7 +33,7 @@
   
   &__close-button {
     @include nonSquareButton(inherit, transparent);
-    font-size: 4rem;
+    font-size: 10vw;
     margin-bottom: 0.5rem;
     float: right;
 
