@@ -1,10 +1,7 @@
 .button {
   @include squareButton($dark-color, $dark-color, inherit);
+  @include button-hover($gold-color, $dark-color);
   font-weight: inherit;
-
-  &:hover {
-    @include button-hover($gold-color, $dark-color);
-  }
 
   &--light {
     @include squareButton($white-color, $white-color, inherit);
@@ -18,26 +15,40 @@
       font-size: 3vw;
     }
   }
-  
+
   &--medium {
     font-size: 6vw;
     padding: 1rem 1.5rem;
+    
     @include respond-to('large') {
       font-size: 2vw;
     }
   }
-  
+
   &--small {
     font-size: 4vw;
     font-weight: $normal;
+    border-width: 0.2rem;
+
     @include respond-to('large') {
       font-size: 1vw;
-      border-width: .3rem;
     }
   }
 
   &--active {
     color: $gold-color;
+    border-width: 0.2rem;
     border-color: $gold-color;
+  }
+
+  &--highlight {
+    display: none;
+    margin: 0;
+    padding: 0;
+    border-color: $gold-color;
+    border-width: 0.2rem;
+    position: absolute;
+    pointer-events: none;
+    transition: all 0.5s ease-out;
   }
 }
