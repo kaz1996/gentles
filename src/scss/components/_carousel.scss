@@ -1,21 +1,32 @@
 .carousel {
-  position: relative;
   width: 105%;
-  overflow: hidden;
+  height: auto;
   margin: auto;
   display: flex;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+  transform: scale(0);
+  animation: scaleImage .5s forwards;
+  
+  @include animation(scaleImage) {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale((1));
+    }
+  }
 
   &__inner {
-    display: flex;
     width: 100%;
+    display: flex;
   }
 
   &__image {
     width: 100%;
     height: auto;
     flex-shrink: 0;
-    transition: transform 5s ease-in-out;
   }
   &__button {
     @include nonSquareButton($white-color, transparent);
@@ -25,9 +36,6 @@
 
     @include respond-to('large') {
       font-size: 5rem;
-      &:hover {
-        opacity: 1;
-      }
     }
 
     &--left {

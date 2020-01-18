@@ -5,6 +5,20 @@
   overflow: hidden;
   border-radius: 0.5rem;
   font-weight: $bolder;
+  opacity: 0;
+  transform: translateY(-10%);
+  animation: fadeInImage 1s forwards;
+
+  @include animation(fadeInImage) {
+    from {
+      transform: translateY(10%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 
   &--display-none {
     display: none;
