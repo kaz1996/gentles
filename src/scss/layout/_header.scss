@@ -1,5 +1,5 @@
 .header {
-  height: 7vh;
+  height: 10vh;
   font-size: 8vw;
   display: flex;
   align-items: center;
@@ -13,25 +13,22 @@
   }
 
   @include respond-to('large') {
-    font-size: 2.5rem;
+    font-size: 2vw;
     justify-content: space-around;
   }
-    
+
   &__logo {
     @include link();
+    @include textHover($gold-color, .7);
     color: $gold-color;
     font-weight: $bolder;
     font-size: 10vw;
     text-align: center;
 
     @include respond-to('large') {
-      font-size: 5rem;
+      font-size: 3.5vw;
       text-align: left;
       margin-left: 2rem;
-    }
-
-    &:hover {
-      opacity: 0.7;
     }
   }
 
@@ -53,6 +50,7 @@
 
   &__cart-button {
     @include nonSquareButton(inherit, transparent);
+    @include button-hover($gold-color, transparent);
     font-size: inherit;
     position: relative;
     margin-right: 2rem;
@@ -60,25 +58,22 @@
     @include respond-to('large') {
       margin-right: 5rem;
     }
-
-    &:hover {
-      color: $gold-color;
-    }
   }
 
   &__cart-text {
     color: $gold-color;
     font-weight: $bolder;
     position: absolute;
-    top: -60%;
+    top: -45%;
     right: -35%;
   }
 
   &__burger-button {
     @include nonSquareButton($white-color, transparent);
+    @include button-hover($white-color, transparent, .8);
     font-size: inherit;
     margin-left: 2rem;
-    transition: all .5s ease-out;
+    transition: all 0.5s ease-out;
     outline-color: transparent;
 
     &--open {
