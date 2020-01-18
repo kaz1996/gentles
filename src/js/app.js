@@ -8,6 +8,7 @@ const searchForm = document.querySelector('#js-search-form');
 const modal = document.querySelector('.modal');
 const modalCloseButton = document.querySelector('#js-close');
 const carousel = modal.querySelector('#js-carousel');
+const highlight = document.querySelector('#js-highlight-button');
 
 const checkButtonShoudldBeDisplay = (counter, images, nextButton, prevButton) => {
   if (counter >= images.length - 1) {
@@ -40,7 +41,6 @@ const slideImage = (images, imageIndex) => {
   });
 
   nextButton.addEventListener('click', () => {
-    console.log(counter, images.length - 2);
     if (counter >= images.length - 1) return;
     counter += 1;
     carousel.style.transition = 'all .5s ease-out';
@@ -80,6 +80,14 @@ const removeActiveClass = () => {
   });
 };
 
+const highlightButton = (filterButton) => {
+  highlight.style.display = 'block';
+  highlight.style.top = `${filterButton.offsetTop}px`;
+  highlight.style.left = `${filterButton.offsetLeft}px`;
+  highlight.style.width = `${filterButton.offsetWidth}px`;
+  highlight.style.height = `${filterButton.offsetHeight}px`;
+};
+
 window.addEventListener('load', () => {
   disableHoverByScroll();
   checkTag('all');
@@ -90,6 +98,7 @@ filterButtons.forEach((filterButton) => {
   filterButton.addEventListener('click', () => {
     removeActiveClass();
     checkTag(filterButton.textContent.toLowerCase());
+    highlightButton(filterButton);
     filterButton.classList.add('button--active');
     updateModal();
   });
@@ -100,6 +109,7 @@ searchForm.addEventListener('submit', (event) => {
   const input = searchForm.querySelector('#js-input');
   const inputText = input.value.toLowerCase();
 
+  highlight.style.display = 'none';
   removeActiveClass();
   checkName(inputText);
   updateModal();
