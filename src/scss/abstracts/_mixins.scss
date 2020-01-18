@@ -7,13 +7,14 @@
   color: $text-color;
   background-color: $bg-color;
   padding: 1rem 1.5rem;
-  border: 0.5rem solid $border-color;
+  border: 0.3rem solid $border-color;
   border-radius: 1rem;
   cursor: pointer;
-  transition: all 0.5s;
+  transition: all 1s;
 
   &:focus {
-    outline: $gold-color auto 0.1rem;
+    outline: none;
+    // outline: $white-color auto 0.1rem;
   }
 }
 
@@ -32,9 +33,19 @@
   padding: 0;
 }
 
-@mixin button-hover($color, $bg-color) {
-  color: $color;
-  background-color: $bg-color;
+@mixin button-hover($color, $bg-color, $opacity: 1) {
+  &:hover {
+    color: $color;
+    background-color: $bg-color;
+    opacity: $opacity;
+  }
+}
+
+@mixin textHover($color: currentColor, $opacity: 1) {
+  &:hover {
+    color: $color;
+    opacity: $opacity;
+  }
 }
 
 @mixin respond-to($breakpoint) {
