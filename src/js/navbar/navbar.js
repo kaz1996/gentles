@@ -7,7 +7,7 @@ const handleAnimation = () => {
     if (link.style.animation) {
       link.style.animation = '';
     } else {
-      link.style.animation = `itemFade 1.5s ease forwards ${index / 7 + 0.3}s`;
+      link.style.animation = `itemFade 2s ease forwards ${index / 7 + 0.3}s`;
     }
   });
 };

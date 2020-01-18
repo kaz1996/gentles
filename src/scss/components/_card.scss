@@ -1,11 +1,11 @@
 .card {
-  background-color: $white-color;
+  font-weight: $bolder;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  background-color: $white-color;
   border-radius: 0.5rem;
-  font-weight: $bolder;
   opacity: 0;
+  overflow: hidden;
   transform: translateY(-10%);
   animation: fadeInImage 1s forwards;
 
@@ -26,7 +26,6 @@
 
   &__image-box {
     position: relative;
-    width: 100%;
     cursor: pointer;
   }
   
@@ -38,8 +37,8 @@
   &__cart-button {
     @include nonSquareButton($dark-color, $gold-color);
     font-size: 5vw;
-    padding: 3rem 1.5rem 1.5rem 2rem;
     border-radius: 2rem 0 0 0;
+    padding: 3rem 1.5rem 1.5rem 2rem;
     position: absolute;
     bottom: 1%;
     right: 0;
@@ -61,7 +60,6 @@
     }
 
     &--right {
-      letter-spacing: 0.2rem;
       margin-right: 2rem;
     }
   }
