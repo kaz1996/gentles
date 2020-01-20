@@ -72,15 +72,13 @@ const updateModal = () => {
   });
 };
 
-const removeActiveClass = () => {
-  filterButtons.forEach((filterButton) => {
-    if (filterButton.classList.contains('button--active')) {
-      filterButton.classList.remove('button--active');
-    }
+const removeClass = (elements, ...classNames) => {
+  elements.forEach((element) => {
+    element.classList.remove(...classNames);
   });
 };
 
-const highlightButton = (filterButton) => {
+const MoveHighlightButton = (filterButton) => {
   highlight.style.display = 'block';
   highlight.style.top = `${filterButton.offsetTop}px`;
   highlight.style.left = `${filterButton.offsetLeft}px`;
@@ -96,10 +94,10 @@ window.addEventListener('load', () => {
 
 filterButtons.forEach((filterButton) => {
   filterButton.addEventListener('click', () => {
-    removeActiveClass();
+    removeClass(filterButtons, 'button--active', 'button--outline-hidden');
+    filterButton.classList.add('button--active', 'button--outline-hidden');
+    MoveHighlightButton(filterButton);
     checkTag(filterButton.textContent.toLowerCase());
-    highlightButton(filterButton);
-    filterButton.classList.add('button--active');
     updateModal();
   });
 });
@@ -110,7 +108,7 @@ searchForm.addEventListener('submit', (event) => {
   const inputText = input.value.toLowerCase();
 
   highlight.style.display = 'none';
-  removeActiveClass();
+  removeClass(filterButtons, 'button--active', 'button--outline-hidden');
   checkName(inputText);
   updateModal();
   searchForm.reset();
