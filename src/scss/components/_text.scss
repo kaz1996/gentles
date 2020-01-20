@@ -1,39 +1,53 @@
 .text {
-  width: 80%;
   text-align: center;
-  font-size: 13vw;
-
-  @include respond-to('large') {
-    width: 50%;
-    font-size: 4vw;
-  }
+  box-sizing: border-box;
   
   &--align-left {
     text-align: left;
   }
-
+  
   &__title {
-    font-size: inherit;
+    font-size: rem(40);
     margin: 0;
 
+    @include respond-to('medium') {
+      font-size: rem(60);
+    }
+    
+    @include respond-to('large') {
+      font-size: rem(80);
+    }
+    
     &--strong {
-      font-size: 20vw;
+      font-size: rem(60);
       color: $gold-color;
-
+      
+      @include respond-to('medium') {
+        font-size: rem(80);
+      }
       @include respond-to('large') {
-        font-size: 6vw;
+        font-size: rem(100);
       }
     }
   }
 
   &__paragraph {
     color: $grey-color;
-    font-size: 5vw;
+    font-size: rem(20);
     margin: 0;
 
     @include respond-to('large') {
-      font-size: 2vw;
-      margin: 2rem 0 3rem 0;
+      font-size: rem(25);
+    }
+  }
+
+  &__button {
+    font-size: rem(18);
+    margin-top: 1em;
+
+    @include respond-to('large') {
+      font-size: rem(20);
+      font-weight: $bolder;
     }
   }
 }

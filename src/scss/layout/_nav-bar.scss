@@ -1,24 +1,26 @@
 .nav-bar {
   width: 50%;
-  height: 95vh;
-  font-size: 75%;
+  height: 90vh;
+  font-size: rem(25);
   background-color: $dark-color;
-  border: .1rem solid $white-color;
-  border-top: none;
+  border-right: 1px solid $white-color;
   position: absolute;
   top: 10vh;
-  left: -5%;
+  left: 0;
   z-index: 30;
-  transform: translateX(-100%);
+  transform: translateX(-150%);
   transition: transform .5s ease-out;
 
   &--open {
     transform: translateX(0);
   }
 
+  @include respond-to('medium') {
+    font-size: inherit;
+  }
+
   @include respond-to('large') {
     height: 100%;
-    font-size: inherit;
     border: none;
     position: static;
     transform: none;
@@ -32,7 +34,6 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding-left: 2rem;
 
     @include respond-to('large') {
       height: 100%;
@@ -43,7 +44,6 @@
   &__item {
     display: block;
     opacity: 0;
-
     @include animation(itemFade) {
       0% {
         opacity: 0;
@@ -59,7 +59,7 @@
   }
 
   &__link {
-    @include link();
+    @include link(inherit);
     @include textHover($opacity: .7);
     color: inherit;
   }

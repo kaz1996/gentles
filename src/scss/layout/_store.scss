@@ -1,14 +1,13 @@
 .store {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+ width: 90%;
 
   &__text {
-    margin-bottom: 3rem;
+    margin-bottom: 1.5em;
   }
 
   &__form {
-    margin: 0;
-    padding: 5rem 0;
+    margin: 2.5em 0;
+    padding:0;
   }
+
 }

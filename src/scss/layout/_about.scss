@@ -5,19 +5,35 @@
   flex-direction: column;
   color: $dark-color;
   background-color: $white-color;
-  padding-bottom: 5vh;
 
-  @include respond-to('large') {
-    height: 70vh;
+  @include respond-to('medium') {
     flex-direction: row;
   }
 
   &__text {
-    margin: 0;
-    padding: 2rem;
-  }
+    width: 90%;
+    margin-bottom: 1em;
 
+    @include respond-to('medium') {
+      width: 55%;
+      padding: 0 1.5em 0 1em;
+    }
+
+    @include respond-to('large') {
+      width: 40%;
+    }
+  }
+  
   &__image-box {
-    margin-top: 2rem;
+    padding: 1em;
+    
+    @include respond-to('medium') {
+      width: 45%;
+      padding: 0 .5em 0 0;
+    }
+
+    @include respond-to('large') {
+      width: 40%;
+    }
   }
 }

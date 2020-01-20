@@ -1,6 +1,6 @@
 .header {
   height: 10vh;
-  font-size: 8vw;
+  font-size: rem(30);
   font-weight: $normal;
   display: flex;
   align-items: center;
@@ -8,27 +8,20 @@
   box-sizing: border-box;
   position: relative;
 
-  @include respond-to('medium') {
-    font-size: 5vw;
-  }
-
   @include respond-to('large') {
-    font-size: 2vw;
     justify-content: space-around;
   }
 
   &__logo {
-    @include link();
+    @include link(inherit);
     @include textHover($gold-color, .9);
-    font-size: 10vw;
-    color: $gold-color;
+    font-size: rem(48);
     font-weight: $bolder;
+    color: $gold-color;
     text-align: center;
 
     @include respond-to('large') {
-      font-size: 3.5vw;
       text-align: left;
-      margin-left: 2rem;
     }
   }
 
@@ -50,13 +43,12 @@
 
   &__cart-button {
     @include nonSquareButton(inherit, transparent);
-    @include button-hover($gold-color, transparent);
     font-size: inherit;
+    margin-right: .2em;
     position: relative;
-    margin-right: 2rem;
-
+    
     @include respond-to('large') {
-      margin-right: 5rem;
+      @include button-hover($gold-color, transparent);
     }
   }
 
@@ -70,11 +62,18 @@
 
   &__burger-button {
     @include nonSquareButton($white-color, transparent);
-    @include button-hover($white-color, transparent, .8);
     font-size: inherit;
-    margin-left: 2rem;
+    padding: 0 .1em;
     transition: all 0.5s ease-out;
-    outline-color: transparent;
+    
+    @include respond-to('large') {
+      @include button-hover($white-color, transparent, .8);
+    }
+
+    &:focus {
+      outline: 1px $white-color solid;
+      outline-offset: .2em;
+    }
 
     &--open {
       transform: rotate(270deg);

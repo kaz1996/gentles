@@ -1,9 +1,5 @@
 .carousel {
   width: 105%;
-  height: auto;
-  margin: auto;
-  display: flex;
-  align-items: center;
   position: relative;
   overflow: hidden;
   transform: scale(0);
@@ -24,18 +20,21 @@
   }
 
   &__image {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     flex-shrink: 0;
   }
   &__button {
     @include nonSquareButton($white-color, transparent);
-    font-size: 10vw;
+    font-size: rem(32);
     position: absolute;
     top: 50%;
-
+    
+    @include respond-to('medium') {
+      font-size: rem(50);
+    }
     @include respond-to('large') {
-      font-size: 5rem;
+      font-size: rem(60);
     }
 
     &--left {

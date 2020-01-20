@@ -1,9 +1,9 @@
 .card {
   font-weight: $bolder;
+  background-color: $white-color;
   display: flex;
   flex-direction: column;
-  background-color: $white-color;
-  border-radius: 0.5rem;
+  border-radius: rem(5);
   opacity: 0;
   overflow: hidden;
   transform: translateY(-10%);
@@ -30,17 +30,17 @@
   }
   
   &__image {
-    width: 100%;
+    max-width: 100%;
     transition: all .5s ease-in-out;
   }
 
   &__cart-button {
     @include nonSquareButton($dark-color, $gold-color);
-    font-size: 5vw;
+    font-size: rem(20);
     border-radius: 2rem 0 0 0;
-    padding: 3rem 1.5rem 1.5rem 2rem;
+    padding: 1.2em .5em .5em .9em;
     position: absolute;
-    bottom: 1%;
+    bottom: 2%;
     right: 0;
   }
 
@@ -48,11 +48,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 1rem;
+    padding: .5em;
   }
 
   &__text {
-    font-size: 5vw;
+    font-size: rem(22);
     color: $dark-color;
 
     @include respond-to('large') {

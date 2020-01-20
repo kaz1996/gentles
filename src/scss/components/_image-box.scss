@@ -1,9 +1,4 @@
 .image-box {
-  width: 90%;
-
-  @include respond-to('large') {
-    width: 40%;
-  }
   
   &__image {
     max-width: 100%;

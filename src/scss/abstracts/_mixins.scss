@@ -1,21 +1,18 @@
-@mixin link {
-  color: $dark-color;
+@mixin link($color) {
+  color: $color;
   text-decoration: none;
 }
 
 @mixin squareButton($border-color, $text-color, $bg-color) {
+  font-family: inherit;
+  font-weight: inherit;
   color: $text-color;
   background-color: $bg-color;
-  padding: 1rem 1.5rem;
-  border: 0.3rem solid $border-color;
-  border-radius: 1rem;
+  padding: .5em 1em;
+  border: 3px solid $border-color;
+  border-radius: rem(5);
   cursor: pointer;
   transition: all 1s;
-
-  &:focus {
-    outline: none;
-    // outline: $white-color auto 0.1rem;
-  }
 }
 
 @mixin nonSquareButton($color, $bg-color) {
@@ -25,6 +22,14 @@
   margin: 0;
   border: none;
   cursor: pointer;
+}
+
+@mixin linkButton {
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding: .5em 1em;
+  box-sizing: border-box;
 }
 
 @mixin list {
@@ -52,7 +57,11 @@
   $raw-query: map-get($breakpoints, $breakpoint);
 
   @if $raw-query {
-    $query: if(type-of($raw-query) == 'string', unquote($raw-query), inspect($raw-query));
+    $query: if(
+      type-of($raw-query) == 'string',
+      unquote($raw-query),
+      inspect($raw-query)
+    );
 
     @media #{$query} {
       @content;

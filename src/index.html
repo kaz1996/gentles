@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gentle's</title>
   </head>
   <body class="page">
@@ -37,9 +38,11 @@
         <h1 class="banner__title">
           Welcome to <span class="banner__title--strong">Gentle's</span>
         </h1>
-        <a href="#js-store" class="banner__link">
-          <button class="button button--light button--big banner__button">Explore</button>
-        </a>
+        <button class="button button--light button--link banner__button">
+          <a href="#js-store" class="button__link">
+            Explore
+          </a>
+        </button>
       </section>
       <section class="about main__about" id="js-about">
         <div class="text text--align-left about__text">
@@ -49,12 +52,18 @@
             at, necessitatibus aliquid rem autem culpa quibusdam voluptates non quam magni ad quidem
             magnam velit! Quia, nisi nihil.
           </p>
-          <a href="#js-store">
-            <button class="button button--medium">Explore</button>
-          </a>
+          <button class="button button--link text__button">
+            <a href="#js-store" class="button__link">
+              Explore
+            </a>
+          </button>
         </div>
         <div class="image-box about__image-box">
-          <img class="image-box__image" src="./assets/imgs/choco-stroberry.jpg" alt="choco brownie with coffee" />
+          <img
+            class="image-box__image"
+            src="./assets/imgs/choco-stroberry.jpg"
+            alt="choco brownie with coffee"
+          />
         </div>
       </section>
       <section class="store main__store" id="js-store">
@@ -70,7 +79,7 @@
           <button class="button button--highlight" id="js-highlight-button"></button>
         </div>
         <form class="form store__form" id="js-search-form">
-          <input type="search" class="form__input" placeholder="Search Items..." id="js-input">
+          <input type="search" class="form__input" placeholder="Search Items..." id="js-input" />
           <button class="form__button" type="submit"><i class="fas fa-search"></i></button>
         </form>
         <div class="modal" id="js-modal">
