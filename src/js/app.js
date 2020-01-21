@@ -6,6 +6,7 @@ import { checkTag, checkName } from './card';
 const filterButtons = document.querySelectorAll('.filter__button');
 const searchForm = document.querySelector('#js-search-form');
 const modal = document.querySelector('.modal');
+const modalBackground = modal.querySelector('#js-modal-background');
 const modalCloseButton = document.querySelector('#js-close');
 const carousel = modal.querySelector('#js-carousel');
 const highlight = document.querySelector('#js-highlight-button');
@@ -72,6 +73,11 @@ const updateModal = () => {
   });
 };
 
+const closeModal = () => {
+  modal.classList.remove('modal--open');
+  carousel.style.transition = '';
+};
+
 const removeClass = (elements, ...classNames) => {
   elements.forEach((element) => {
     element.classList.remove(...classNames);
@@ -114,7 +120,10 @@ searchForm.addEventListener('submit', (event) => {
   searchForm.reset();
 });
 
+modalBackground.addEventListener('click', () => {
+  closeModal();
+});
+
 modalCloseButton.addEventListener('click', () => {
-  modal.classList.remove('modal--open');
-  carousel.style.transition = '';
+  closeModal();
 });
