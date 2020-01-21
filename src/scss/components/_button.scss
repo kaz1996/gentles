@@ -1,8 +1,7 @@
 .button {
-  @include squareButton($dark-color, $dark-color, inherit);
+  @include squareButton($dark-color, $dark-color, transparent);
   @include button-hover($gold-color, $dark-color);
 
-  
   &--light {
     @include squareButton($white-color, $white-color, inherit);
   }
@@ -10,7 +9,7 @@
   &--link {
     padding: 0;
   }
-  
+
   &__link {
     @include link(inherit);
     @include linkButton();
