@@ -54,10 +54,12 @@ const slideImage = (images, imageIndex) => {
 };
 
 const createImage = (image) => {
+  // const container = document.createElement('div');
   const imageElemnent = document.createElement('img');
   imageElemnent.classList.add('carousel__image');
   imageElemnent.src = image.src;
   carousel.appendChild(imageElemnent);
+  // carousel.appendChild(container);
 };
 
 const updateModal = () => {
