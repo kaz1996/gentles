@@ -5,8 +5,9 @@ import { checkTag, checkName } from './card';
 
 const filterButtons = document.querySelectorAll('.filter__button');
 const searchForm = document.querySelector('#js-search-form');
-const modal = document.querySelector('.modal');
-const modalCloseButton = document.querySelector('#js-close');
+const modal = document.querySelector('#js-modal');
+const modalBackground = modal.querySelector('#js-modal-background');
+const modalCloseButton = modal.querySelector('#js-close');
 const carousel = modal.querySelector('#js-carousel');
 const highlight = document.querySelector('#js-highlight-button');
 
@@ -53,13 +54,10 @@ const slideImage = (images, imageIndex) => {
 };
 
 const createImage = (image) => {
-  // const container = document.createElement('div');
-  // container.classList.add('img-container');
   const imageElemnent = document.createElement('img');
   imageElemnent.classList.add('carousel__image');
   imageElemnent.src = image.src;
   carousel.appendChild(imageElemnent);
-  // carousel.appendChild(container);
 };
 
 const updateModal = () => {
@@ -122,6 +120,10 @@ searchForm.addEventListener('submit', (event) => {
   searchForm.reset();
 });
 
-modalCloseButton.addEventListener('click', () => {
-  closeModal();
+const modalCloseElements = [modalBackground, modalCloseButton];
+
+modalCloseElements.forEach((closeElement) => {
+  closeElement.addEventListener('click', () => {
+    closeModal();
+  });
 });

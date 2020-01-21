@@ -1,7 +1,6 @@
 .modal {
   width: 100%;
   height: 100%;
-  background-color: $dark-color-opacity-07;
   display: none;
   position: fixed;
   top: 0;
@@ -10,18 +9,34 @@
   overflow: hidden;
 
   &__inner {
-    width: 90%;
+    width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: relative;
     margin: auto;
+
+    @include respond-to('large') {
+      width: 70%;
+    }
+  }
+
+  &__background {
+    width: 100%;
+    height: 100%;
+    background-color: $dark-color-opacity-07;
+    position: fixed;
   }
 
   &__close-button {
     @include nonSquareButton(inherit, transparent);
     @include textHover($gold-color);
     font-size: rem(32);
-    margin-bottom: 0.2em;
-    float: right;
+    margin: .2em;
+    align-self: flex-end;
+    z-index: 1;
 
     @include respond-to('medium') {
       font-size: rem(50);
