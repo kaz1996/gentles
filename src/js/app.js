@@ -53,12 +53,13 @@ const slideImage = (images, imageIndex) => {
 };
 
 const createImage = (image) => {
-  // const container = document.createElement('div');
+  const container = document.createElement('div');
+  container.classList.add('img-container');
   const imageElemnent = document.createElement('img');
   imageElemnent.classList.add('carousel__image');
   imageElemnent.src = image.src;
-  carousel.appendChild(imageElemnent);
-  // carousel.appendChild(container);
+  container.appendChild(imageElemnent);
+  carousel.appendChild(container);
 };
 
 const updateModal = () => {
