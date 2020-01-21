@@ -1,5 +1,5 @@
 .card {
-  @include flex($direction: column);
+  @include flex($direction: column, $justify: flex-start, $align: stretch);
   font-weight: $bolder;
   background-color: $white-color;
   border-radius: rem(5);
@@ -52,7 +52,7 @@
   &__text {
     font-size: rem(22);
     color: $dark-color;
-    margin-left: 1em;
+    margin-left: 0.5em;
 
     &--right {
       margin-right: 1em;
