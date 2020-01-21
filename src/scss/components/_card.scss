@@ -1,8 +1,7 @@
 .card {
+  @include flex($direction: column);
   font-weight: $bolder;
   background-color: $white-color;
-  display: flex;
-  flex-direction: column;
   border-radius: rem(5);
   opacity: 0;
   overflow: hidden;
@@ -45,22 +44,18 @@
   }
 
   &__body {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex($justify: space-between);
+    width: 100%;
     padding: 0.5em;
   }
 
   &__text {
     font-size: rem(22);
     color: $dark-color;
-
-    @include respond-to('large') {
-      font-size: 1.5vw;
-    }
+    margin-left: 1em;
 
     &--right {
-      margin-right: 2rem;
+      margin-right: 1em;
     }
   }
 }
@@ -81,7 +76,6 @@
     }
 
     &__cart-button {
-      font-size: 1.5vw;
       bottom: -10%;
       right: -30%;
       transition: all 0.5s ease-in-out;

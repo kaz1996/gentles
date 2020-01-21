@@ -1,8 +1,5 @@
 .about {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
+  @include flex($direction: column, $justify: space-around);
   color: $dark-color;
   background-color: $white-color;
 
@@ -23,13 +20,13 @@
       width: 40%;
     }
   }
-  
+
   &__image-box {
     padding: 1em;
-    
+
     @include respond-to('medium') {
       width: 45%;
-      padding: 0 .5em 0 0;
+      padding: 0 0.5em 0 0;
     }
 
     @include respond-to('large') {

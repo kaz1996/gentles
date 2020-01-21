@@ -2,8 +2,8 @@
   width: 100%;
   overflow: hidden;
   transform: scale(0);
-  animation: scaleImage .5s forwards;
-  
+  animation: scaleImage 0.5s forwards;
+
   @include animation(scaleImage) {
     from {
       transform: scale(0);
@@ -14,12 +14,10 @@
   }
 
   &__inner {
+    @include flex($justify: flex-start, $align: flex-start);
     width: 100%;
-    display: flex;
-    align-items: flex-start;
   }
 
-  
   &__image {
     max-width: 100%;
     height: auto;
@@ -32,14 +30,14 @@
     font-size: rem(32);
     position: absolute;
     top: 50%;
-    
+
     @include respond-to('medium') {
       font-size: rem(50);
     }
     @include respond-to('large') {
       font-size: rem(60);
     }
-    
+
     &--left {
       left: 5%;
     }

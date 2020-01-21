@@ -1,17 +1,16 @@
 .form {
-  display: flex;
-  justify-content: center;
-  
+  @include flex($justify: center, $align: strech);
+
   @include respond-to('large') {
     height: 5vh;
-  } 
-  
+  }
+
   &__input {
     -webkit-appearance: none;
     font-size: rem(16);
     font-weight: $bold;
-    padding: .5em;
-    border: .1px solid $grey-color;
+    padding: 0.5em;
+    border: 2px solid $grey-color;
     border-radius: rem(5) 0 0 rem(5);
 
     @include respond-to('medium') {
@@ -22,10 +21,10 @@
       width: 60%;
     }
   }
-  
+
   &__button {
     @include squareButton($grey-color, $dark-color, $gold-color);
-    border-width: .1px;
+    border-width: 1px;
     border-radius: 0 rem(5) rem(5) 0;
   }
 }

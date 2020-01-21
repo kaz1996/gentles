@@ -1,15 +1,14 @@
 .filter {
-  display: flex;
-  justify-content: space-around;
+  @include flex($justify: space-around);
   flex-wrap: wrap;
 
   @include respond-to('large') {
     justify-content: center;
   }
-  
+
   &__button {
     font-size: rem(16);
-    margin: 0 .2em 1em 0;
+    margin: 0 0.2em 1em 0;
 
     @include respond-to('medium') {
       font-size: rem(18);

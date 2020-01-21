@@ -9,12 +9,9 @@
   overflow: hidden;
 
   &__inner {
+    @include flex($direction: column);
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     position: relative;
     margin: auto;
 
@@ -34,7 +31,7 @@
     @include nonSquareButton(inherit, transparent);
     @include textHover($gold-color);
     font-size: rem(32);
-    margin: .2em;
+    margin: 0.2em;
     align-self: flex-end;
     z-index: 1;
 
