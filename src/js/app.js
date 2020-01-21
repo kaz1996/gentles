@@ -2,6 +2,7 @@ import '../scss/main.scss';
 import disableHoverByScroll from './util';
 import './navbar/navbar';
 import { checkTag, checkName } from './card';
+import smoothScroll from './util/smoothScroll';
 
 const filterButtons = document.querySelectorAll('.filter__button');
 const searchForm = document.querySelector('#js-search-form');
@@ -10,6 +11,7 @@ const modalBackground = modal.querySelector('#js-modal-background');
 const modalCloseButton = modal.querySelector('#js-close');
 const carousel = modal.querySelector('#js-carousel');
 const highlight = document.querySelector('#js-highlight-button');
+const internalLinks = document.querySelectorAll('.nav-bar__link, .button__link');
 
 const checkButtonShoudldBeDisplay = (counter, images, nextButton, prevButton) => {
   if (counter >= images.length - 1) {
@@ -96,6 +98,15 @@ window.addEventListener('load', () => {
   disableHoverByScroll();
   checkTag('all');
   updateModal();
+});
+
+internalLinks.forEach((internalLink, index) => {
+  internalLink.addEventListener('click', (event) => {
+    if (index === 0) return;
+    event.preventDefault();
+    const href = internalLink.getAttribute('href');
+    smoothScroll(href, 500);
+  });
 });
 
 filterButtons.forEach((filterButton) => {
