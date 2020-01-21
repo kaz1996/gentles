@@ -1,7 +1,7 @@
 const body = document.querySelector('body');
 let timer;
 
-const disableHoverByScroll = () => {
+export const disableHoverByScroll = () => {
   // Scrool時にhoverを無効に
   window.addEventListener('scroll', () => {
     clearTimeout(timer);
@@ -14,4 +14,8 @@ const disableHoverByScroll = () => {
   });
 };
 
-export default disableHoverByScroll;
+export const removeMultipleElementsClass = (elements, ...classNames) => {
+  elements.forEach((element) => {
+    element.classList.remove(...classNames);
+  });
+};

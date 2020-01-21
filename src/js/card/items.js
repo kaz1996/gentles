@@ -1,15 +1,15 @@
-import cake1 from '../assets/imgs/cake1.jpg';
-import cake2 from '../assets/imgs/cake2.jpg';
-import cake3 from '../assets/imgs/cake3.jpg';
-import cupcake1 from '../assets/imgs/cupcake1.jpg';
-import cupcake2 from '../assets/imgs/cupcake2.jpg';
-import cupcake3 from '../assets/imgs/cupcake3.jpg';
-import sweets1 from '../assets/imgs/sweets1.jpg';
-import sweets2 from '../assets/imgs/sweets2.jpg';
-import sweets3 from '../assets/imgs/sweets3.jpg';
-import donut1 from '../assets/imgs/donut1.jpg';
-import donut2 from '../assets/imgs/donut2.jpg';
-import donut3 from '../assets/imgs/donut3.jpg';
+import cake1 from '../../assets/imgs/cake1.jpg';
+import cake2 from '../../assets/imgs/cake2.jpg';
+import cake3 from '../../assets/imgs/cake3.jpg';
+import cupcake1 from '../../assets/imgs/cupcake1.jpg';
+import cupcake2 from '../../assets/imgs/cupcake2.jpg';
+import cupcake3 from '../../assets/imgs/cupcake3.jpg';
+import sweets1 from '../../assets/imgs/sweets1.jpg';
+import sweets2 from '../../assets/imgs/sweets2.jpg';
+import sweets3 from '../../assets/imgs/sweets3.jpg';
+import donut1 from '../../assets/imgs/donut1.jpg';
+import donut2 from '../../assets/imgs/donut2.jpg';
+import donut3 from '../../assets/imgs/donut3.jpg';
 
 const items = [
   {

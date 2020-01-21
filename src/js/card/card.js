@@ -18,20 +18,20 @@ const createCard = (item) => {
   itemsContainer.appendChild(card);
 };
 
-export const checkTag = (inputTag) => {
+export const createCardByTag = (tag) => {
   itemsContainer.innerHTML = '';
   items.forEach((item) => {
-    if (inputTag === 'all' || inputTag === item.tag[1]) {
+    if (tag === 'all' || tag === item.tag[1]) {
       createCard(item);
     }
   });
 };
 
-export const checkName = (inputText) => {
+export const createCardBySearch = (searchText) => {
   itemsContainer.innerHTML = '';
   items.forEach((item) => {
     const itemNameLower = item.name.toLowerCase();
-    if (itemNameLower.includes(inputText)) {
+    if (itemNameLower.includes(searchText)) {
       createCard(item);
     }
   });
