@@ -1,11 +1,7 @@
 import '../scss/main.scss';
-import smoothscroll from 'smoothscroll-polyfill';
 import disableHoverByScroll from './util';
 import './navbar/navbar';
 import { checkTag, checkName } from './card';
-
-// kick off the polyfill!
-smoothscroll.polyfill();
 
 const filterButtons = document.querySelectorAll('.filter__button');
 const searchForm = document.querySelector('#js-search-form');
