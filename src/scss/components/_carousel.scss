@@ -30,6 +30,7 @@
     font-size: rem(32);
     position: absolute;
     top: 50%;
+    z-index: 1;
 
     @include respond-to('medium') {
       font-size: rem(50);
