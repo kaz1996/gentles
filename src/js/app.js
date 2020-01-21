@@ -6,7 +6,6 @@ import { checkTag, checkName } from './card';
 const filterButtons = document.querySelectorAll('.filter__button');
 const searchForm = document.querySelector('#js-search-form');
 const modal = document.querySelector('.modal');
-const modalBackground = modal.querySelector('#js-modal-background');
 const modalCloseButton = document.querySelector('#js-close');
 const carousel = modal.querySelector('#js-carousel');
 const highlight = document.querySelector('#js-highlight-button');
@@ -120,10 +119,6 @@ searchForm.addEventListener('submit', (event) => {
   checkName(inputText);
   updateModal();
   searchForm.reset();
-});
-
-modalBackground.addEventListener('click', () => {
-  closeModal();
 });
 
 modalCloseButton.addEventListener('click', () => {
