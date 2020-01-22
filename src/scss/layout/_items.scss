@@ -4,6 +4,6 @@
   gap: 3vh;
 
   @include respond-to('huge') {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(355px, 1fr));
   }
 }
