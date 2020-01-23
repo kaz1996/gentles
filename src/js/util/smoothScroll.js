@@ -6,10 +6,11 @@ const ease = (t, b, c, d) => {
 };
 
 const smoothScroll = (target, duration) => {
+  const headerHeight = document.querySelector('#js-header').clientHeight;
   const targetElement = document.querySelector(target);
   const targetElementPosition = targetElement.offsetTop;
   const startPosition = window.pageYOffset;
-  const distance = targetElementPosition - startPosition;
+  const distance = targetElementPosition - startPosition - headerHeight + 3;
   let startTime = null;
 
   const animation = (currentTime) => {
