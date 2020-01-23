@@ -9,6 +9,10 @@
   overflow-x: hidden;
 
   &__header {
-    padding: .3em .4em;
+    padding: 0.3em 0.4em;
+  }
+
+  &__main {
+    margin: 0;
   }
 }
