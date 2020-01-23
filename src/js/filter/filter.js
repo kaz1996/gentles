@@ -10,9 +10,9 @@ const MoveHighlightButton = (filterButton) => {
   highlightButton.style.height = `${filterButton.offsetHeight}px`;
 };
 
-export const filterCardsByTag = (filterButton) => {
-  MoveHighlightButton(filterButton);
-  createCardByTag(filterButton.textContent.toLowerCase());
+export const filterCardsByTag = (filterButton, highlightOn = true) => {
+  if (highlightOn) MoveHighlightButton(filterButton);
+  createCardByTag(filterButton.textContent.toLowerCase().trim());
 };
 
 export const filterCardsBySearch = (searchText) => {
