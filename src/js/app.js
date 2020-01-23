@@ -1,10 +1,11 @@
 import '../scss/main.scss';
 import smoothScroll from './util/smoothScroll';
 import { removeMultipleElementsClass, disableHoverByScroll } from './util/util';
-import { toggleBurgerMenu, closeMenuByLinkClicked } from './navbar/navbar';
+import { toggleBurgerMenu, closeMenuByLinkClicked, observer } from './navbar/navbar';
 import { filterCardsByTag, filterCardsBySearch } from './filter/filter';
 import { updateModalContents, closeModal } from './modal/modal';
 
+const sections = document.querySelectorAll('section');
 const burger = document.querySelector('#js-burger');
 const links = document.querySelectorAll('.nav-bar__item');
 const filterButtons = document.querySelectorAll('.filter__button');
@@ -16,7 +17,10 @@ const modalCloseElements = [modalBackground, modalCloseButton];
 
 window.addEventListener('load', () => {
   disableHoverByScroll();
-  filterCardsByTag(filterButtons[0]);
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
+  filterCardsByTag(filterButtons[0], false);
   updateModalContents();
 });
 
@@ -30,9 +34,8 @@ links.forEach((link) => {
   });
 });
 
-internalLinks.forEach((internalLink, index) => {
+internalLinks.forEach((internalLink) => {
   internalLink.addEventListener('click', (event) => {
-    if (index === 0) return;
     event.preventDefault();
     const href = internalLink.getAttribute('href');
     smoothScroll(href, 500);
