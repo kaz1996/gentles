@@ -1,9 +1,5 @@
 .form {
-  @include flex($justify: center, $align: strech);
-
-  @include respond-to('large') {
-    height: 5vh;
-  }
+  @include flex($justify: center, $align: stretch);
 
   &__input {
     -webkit-appearance: none;
