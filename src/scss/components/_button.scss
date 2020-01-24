@@ -1,12 +1,12 @@
 .button {
-  @include squareButton($dark-color, $dark-color, transparent);
+  @include squareButton($white-color, inherit, transparent);
   @include button-hover($gold-color, $dark-color);
 
-  &--light {
-    @include squareButton($white-color, $white-color, inherit);
+  &--border-black {
+    border-color: $dark-color;
   }
 
-  &--link {
+  &--type-link {
     padding: 0;
   }
 
@@ -15,7 +15,7 @@
     @include linkButton();
   }
 
-  &--small {
+  &--border-narrow {
     border-width: 1px;
   }
 
