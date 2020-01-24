@@ -7,6 +7,8 @@ import { updateModalContents, closeModal } from './modal/modal';
 
 const sections = document.querySelectorAll('section');
 const burger = document.querySelector('#js-burger');
+const cartButton = document.querySelector('#js-cart-button');
+const cart = document.querySelector('#js-cart');
 const links = document.querySelectorAll('.nav-bar__item');
 const filterButtons = document.querySelectorAll('.filter__button');
 const searchForm = document.querySelector('#js-search-form');
@@ -26,6 +28,10 @@ window.addEventListener('load', () => {
 
 burger.addEventListener('click', () => {
   toggleBurgerMenu();
+});
+
+cartButton.addEventListener('click', () => {
+  cart.classList.toggle('cart--open');
 });
 
 links.forEach((link) => {

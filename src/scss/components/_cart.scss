@@ -1,0 +1,76 @@
+.cart {
+  width: 75%;
+  height: 100vh;
+  font-size: rem(20);
+  text-align: center;
+  background-color: inherit;
+  position: absolute;
+  top: 10vh;
+  right: 0;
+  overflow-y: scroll;
+  transform: translateX(100%);
+  transition: all 0.5s;
+
+  &::-webkit-scrollbar {
+    width: 1%;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: inherit;
+  }
+
+  @include respond-to('medium') {
+    width: 50%;
+  }
+
+  @include respond-to('large') {
+    width: 30%;
+  }
+
+  &--open {
+    transform: translateX(0);
+  }
+
+  &__item {
+    @include flex($justify: space-around);
+    padding: 1em 0;
+  }
+
+  &__image-box {
+    width: 20%;
+  }
+
+  &__item-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__item-info {
+    @include flex($direction: column, $justify: space-evenly, $align: flex-start);
+    width: 50%;
+  }
+
+  &__item-operation {
+    @include flex($justify: space-evenly);
+    width: 15%;
+  }
+
+  &__item-count {
+    display: block;
+  }
+
+  &__count-up,
+  &__count-down,
+  &__delete-button {
+    @include nonSquareButton(inherit, inherit);
+    @include button-hover($gold-color, inherit);
+  }
+
+  &__total {
+    display: block;
+  }
+
+  &__checkout {
+    margin-top: 1em;
+  }
+}
