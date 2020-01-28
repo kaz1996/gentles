@@ -6,7 +6,7 @@
   font-weight: $normal;
   background-color: $dark-color;
   box-sizing: border-box;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1;
   transition: all 1s;
@@ -59,7 +59,7 @@
     color: $gold-color;
     font-weight: $bolder;
     position: absolute;
-    top: -75%;
+    top: -70%;
     right: -35%;
   }
 
