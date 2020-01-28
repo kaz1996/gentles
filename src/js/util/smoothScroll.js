@@ -10,7 +10,7 @@ const smoothScroll = (target, duration) => {
   const targetElement = document.querySelector(target);
   const targetElementPosition = targetElement.offsetTop;
   const startPosition = window.pageYOffset;
-  const distance = targetElementPosition - startPosition - headerHeight + 3;
+  const distance = targetElementPosition - startPosition - headerHeight + 5;
   let startTime = null;
 
   const animation = (currentTime) => {
