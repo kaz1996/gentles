@@ -4,11 +4,12 @@ import { removeMultipleElementsClass, disableHoverByScroll } from './util/util';
 import { toggleBurgerMenu, closeMenuByLinkClicked, observer } from './navbar/navbar';
 import { filterCardsByTag, filterCardsBySearch } from './filter/filter';
 import { updateModalContents, closeModal } from './modal/modal';
+import { setCartItem } from './cart/cart';
 
 const sections = document.querySelectorAll('section');
 const burger = document.querySelector('#js-burger');
-const cartButton = document.querySelector('#js-cart-button');
 const cart = document.querySelector('#js-cart');
+const cartButton = document.querySelector('#js-cart-button');
 const links = document.querySelectorAll('.nav-bar__item');
 const filterButtons = document.querySelectorAll('.filter__button');
 const searchForm = document.querySelector('#js-search-form');
@@ -16,12 +17,14 @@ const modalBackground = document.querySelector('#js-modal-background');
 const modalCloseButton = document.querySelector('#js-close');
 const internalLinks = document.querySelectorAll('.nav-bar__link, .button__link');
 const modalCloseElements = [modalBackground, modalCloseButton];
+const savedCartItems = [...(JSON.parse(localStorage.getItem('products')) || [])];
 
 window.addEventListener('load', () => {
   disableHoverByScroll();
   sections.forEach((section) => {
     observer.observe(section);
   });
+  setCartItem(savedCartItems);
   filterCardsByTag(filterButtons[0], false);
   updateModalContents();
 });

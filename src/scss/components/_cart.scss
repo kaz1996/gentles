@@ -8,7 +8,7 @@
   top: 10vh;
   right: 0;
   overflow-y: scroll;
-  transform: translateX(100%);
+  transform: translateX(200%);
   transition: all 0.5s;
 
   &::-webkit-scrollbar {
@@ -29,6 +29,12 @@
 
   &--open {
     transform: translateX(0);
+  }
+
+  &__header {
+    font-size: rem(30);
+    font-weight: $bold;
+    color: $gold-color;
   }
 
   &__item {
@@ -64,13 +70,16 @@
   &__delete-button {
     @include nonSquareButton(inherit, inherit);
     @include button-hover($gold-color, inherit);
+    font-size: inherit;
   }
 
   &__total {
     display: block;
+    font-size: rem(25);
   }
 
   &__checkout {
     margin-top: 1em;
+    font-size: inherit;
   }
 }

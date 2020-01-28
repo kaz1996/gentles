@@ -30,33 +30,11 @@
       </span>
       <button class="header__cart-button" id="js-cart-button">
         <i class="button__icon fas fa-shopping-cart"></i>
-        <span class="header__cart-text">0</span>
+        <span class="header__cart-amount" id="js-cart-amount">0</span>
       </button>
       <div class="cart" id="js-cart">
-        <div class="cart__item">
-          <div class="cart__image-box">
-            <img src="./assets/imgs/cake1.jpg" alt="" class="cart__item-image" />
-          </div>
-          <div class="cart__item-info">
-            <span class="cart__item-name">Chocolate Cake</span>
-            <span class="cart__item-price">$5</span>
-          </div>
-          <div class="cart__item-operation">
-            <div class="cart__item-counter">
-              <button class="cart__count-up">
-                <i class="fas fa-angle-up"></i>
-              </button>
-              <span class="cart__item-count">1</span>
-              <button class="cart__count-down">
-                <i class="fas fa-angle-down"></i>
-              </button>
-            </div>
-            <button class="cart__delete-button">
-              <i class="far fa-trash-alt"></i>
-            </button>
-          </div>
-        </div>
-        <span class="cart__total"> Total: <span>$5</span> </span>
+        <span class="cart__header">Your Cart</span>
+        <span class="cart__total" id="js-cart-total"> Total: <span>$5</span> </span>
         <button class="button button--border-narrow cart__checkout">CHECK OUT</button>
       </div>
     </header>
