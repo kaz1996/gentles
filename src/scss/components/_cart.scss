@@ -54,6 +54,7 @@
   &__item-info {
     @include flex($direction: column, $justify: space-evenly, $align: flex-start);
     width: 50%;
+    text-align: left;
   }
 
   &__item-operation {
