@@ -1,9 +1,14 @@
 .items {
   display: grid;
+  justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 3vh;
 
+  @include respond-to('medium') {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 280px));
+  }
+
   @include respond-to('huge') {
-    grid-template-columns: repeat(auto-fit, minmax(355px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(355px, 355px));
   }
 }
