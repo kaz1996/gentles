@@ -18,6 +18,6 @@
     "prettier/prettier": "error",
     "no-console": "off",
     "no-param-reassign": "off",
-    "quotes": ["error", "single", {"allowTemplateLiterals": true}]
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }]
   }
 }
