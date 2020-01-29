@@ -22,7 +22,6 @@
     font-weight: $bolder;
     color: $gold-color;
     text-align: center;
-    align-self: center;
 
     @include respond-to('large') {
       text-align: left;
@@ -48,7 +47,7 @@
   &__cart-button {
     @include nonSquareButton(inherit, transparent);
     font-size: inherit;
-    margin: 0.5em 0.2em 0 0;
+    margin-right: 0.2em;
     position: relative;
 
     @include respond-to('large') {
