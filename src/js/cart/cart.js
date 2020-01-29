@@ -46,58 +46,39 @@ const calculateTotal = (cartItemsArray) => {
   cartTotalPrice.innerHTML = `Total: $${totalPrice}`;
 };
 
-const handleItemOperation = () => {
-  const countUpButtons = document.querySelectorAll('.cart__count-up');
-  const counDownButtons = document.querySelectorAll('.cart__count-down');
-  const deleteItemButtons = document.querySelectorAll('.cart__delete-button');
-
-  countUpButtons.forEach((countUpButton) => {
-    countUpButton.addEventListener('click', () => {
-      const id = Number(countUpButton.dataset.id);
-      cartItems.forEach((cartItem) => {
-        if (cartItem.id === id) {
-          cartItem.amount += 1;
-          const itemCount = document.querySelector(`[data-id="${id}"] .cart__item-count`);
-          itemCount.innerHTML = cartItem.amount;
-          calculateTotal(cartItems);
-        }
-      });
-    });
-  });
-
-  counDownButtons.forEach((countDownButton) => {
-    countDownButton.addEventListener('click', () => {
-      const id = Number(countDownButton.dataset.id);
-      cartItems.forEach((cartItem) => {
-        if (cartItem.id === id) {
-          cartItem.amount -= 1;
-          if (cartItem.amount <= 0) return;
-          const itemCount = document.querySelector(`[data-id="${id}"] .cart__item-count`);
-          itemCount.innerHTML = cartItem.amount;
-          calculateTotal(cartItems);
-        }
-      });
-    });
-  });
-
-  deleteItemButtons.forEach((deleteItemButton) => {
-    deleteItemButton.addEventListener('click', () => {
-      const id = Number(deleteItemButton.dataset.id);
-      cartItems = cartItems.filter((item) => item.id !== id);
-      cart.removeChild(document.querySelector(`[data-id="${id}"]`));
-      const cartAddButton = document.querySelector(`.card [data-id="${id}"]`);
-      cartAddButton.disabled = false;
-      cartAddButton.innerHTML = `<i class="fa fa-shopping-cart"></i>ADD TO CART`;
-      calculateTotal(cartItems);
-    });
+const handleCountUp = (countUpButton) => {
+  countUpButton.addEventListener('click', () => {
+    const id = Number(countUpButton.dataset.id);
+    const itemIndex = cartItems.findIndex((item) => item.id === id);
+    const itemCount = document.querySelector(`[data-id="${id}"] .cart__item-count`);
+    cartItems[itemIndex].amount += 1;
+    itemCount.innerHTML = cartItems[itemIndex].amount;
+    calculateTotal(cartItems);
   });
 };
 
-export const setCartItem = (savedCartItems) => {
-  cartItems = [...savedCartItems];
-  cartItems.forEach((cartItem) => createCartItem(cartItem));
-  calculateTotal(cartItems);
-  handleItemOperation();
+const handleCountDown = (countDownButton) => {
+  countDownButton.addEventListener('click', () => {
+    const id = Number(countDownButton.dataset.id);
+    const itemIndex = cartItems.findIndex((item) => item.id === id);
+    const itemCount = document.querySelector(`[data-id="${id}"] .cart__item-count`);
+    cartItems[itemIndex].amount -= 1;
+    if (cartItems[itemIndex].amount <= 0) return;
+    itemCount.innerHTML = cartItems[itemIndex].amount;
+    calculateTotal(cartItems);
+  });
+};
+
+const handleDelete = (deleteItemButton) => {
+  deleteItemButton.addEventListener('click', () => {
+    const id = Number(deleteItemButton.dataset.id);
+    cartItems = cartItems.filter((item) => item.id !== id);
+    cart.removeChild(document.querySelector(`[data-id="${id}"]`));
+    const cartAddButton = document.querySelector(`.card [data-id="${id}"]`);
+    cartAddButton.disabled = false;
+    cartAddButton.innerHTML = `<i class="fa fa-shopping-cart"></i>ADD TO CART`;
+    calculateTotal(cartItems);
+  });
 };
 
 export const checkItemInCart = (cartButton) => {
@@ -108,13 +89,34 @@ export const checkItemInCart = (cartButton) => {
   }
 };
 
+export const setCartItem = (savedCartItems) => {
+  cartItems = [...savedCartItems];
+  cartItems.forEach((cartItem) => createCartItem(cartItem));
+  calculateTotal(cartItems);
+  const countUpButtons = document.querySelectorAll('.cart__count-up');
+  const countDownButtons = document.querySelectorAll('.cart__count-down');
+  const deleteItemButtons = document.querySelectorAll('.cart__delete-button');
+
+  countUpButtons.forEach((countUpButton) => {
+    handleCountUp(countUpButton);
+  });
+  countDownButtons.forEach((countDownButton) => {
+    handleCountDown(countDownButton);
+  });
+  deleteItemButtons.forEach((deleteItemButton) => {
+    handleDelete(deleteItemButton);
+  });
+};
+
 export const updateCart = (addedItem) => {
   const itemId = Number(addedItem.dataset.id);
   const cartItem = { ...items.find(({ id }) => id === itemId), amount: 1 };
   cartItems.push(cartItem);
   createCartItem(cartItem);
   calculateTotal(cartItems);
-  handleItemOperation();
+  handleCountUp(document.querySelector(`[data-id="${itemId}"] .cart__count-up`));
+  handleCountDown(document.querySelector(`[data-id="${itemId}"] .cart__count-down`));
+  handleDelete(document.querySelector(`[data-id="${itemId}"] .cart__delete-button`));
 };
 
 window.addEventListener('unload', () => {
